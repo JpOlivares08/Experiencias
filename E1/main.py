@@ -18,7 +18,7 @@ def menu():
 
     # Poner el print bonito de las opciones del menu
     print_opciones_menu()
-    opcion = int(input())
+    opcion = input()
 
     if opcion == "a": 
         peso_promedio = peso_promedio_archivos_protegidos(archivos)

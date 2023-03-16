@@ -4,8 +4,8 @@ from os.path import join
 def peso_promedio_archivos_protegidos(archivos: list) -> float:
     pesos = []
     for archivo in archivos:
-        if not archivo.protegido:
-            pesos.append(archivo.weight)
+        if archivo.protegido:
+            pesos.append(float(archivo.peso))
     suma = sum(pesos)
     return round(suma / len(pesos), 1)
 
@@ -13,10 +13,10 @@ def peso_promedio_archivos_protegidos(archivos: list) -> float:
 def buscar_extensiones_unicas(archivos: list) -> set:
     tipos = set()
     for archivo in archivos:
-        extension = archivo.nombre.split('.')[4]
-        tipos.append(extension)
+        extension = archivo.nombre.split('.')
+        tipos.add(extension)
 
-    return
+    return tipos
 
 
 def cargar_top_archivos() -> list:
