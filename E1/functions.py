@@ -34,4 +34,6 @@ def buscar_archivo(carpeta: dict, nombre_archivo: str) -> list:
     if carpeta[nombre_archivo] == nombre_archivo:
         return [carpeta["nombre_carpeta"], carpeta["archivo"].nombre]
 
+
+# usar si o si append al nombre.
     # Recursión (Completar)
