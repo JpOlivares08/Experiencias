@@ -15,13 +15,11 @@ class TestMain(unittest.TestCase):
         self.assertIsInstance(peso_promedio, float)
         self.assertEqual(peso_promedio, 37.5)
 
-    @unittest.skip("Función todavía no corregida")
     def test_buscar_extensiones_unicas(self):
         extensiones = buscar_extensiones_unicas(self.archivos)
         self.assertIsInstance(extensiones, set)
         self.assertSetEqual(extensiones, set(["pdf", "py", "txt", "js"]))
 
-    @unittest.skip("Función todavía no corregida")
     def test_cargar_top_archivos(self):
         top = cargar_top_archivos()
         self.assertIsInstance(top, list)
@@ -32,7 +30,6 @@ class TestMain(unittest.TestCase):
             ["notas.secretas.no.mostrar.txt", "20.41"],
         ])
 
-    @unittest.skip("Función no implementada completamente")
     def test_buscar_archivo_1(self):
         path = buscar_archivo(self.carpeta, "d3.js")
         self.assertIsInstance(path, list)
