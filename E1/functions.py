@@ -31,9 +31,16 @@ def cargar_top_archivos() -> list:
 
 def buscar_archivo(carpeta: dict, nombre_archivo: str) -> list:
     # Caso base
-    if carpeta[nombre_archivo] == nombre_archivo:
+    if carpeta['archivo'].nombre == nombre_archivo:
         return [carpeta["nombre_carpeta"], carpeta["archivo"].nombre]
 
+    if carpeta['subcarpeta_1']:
+        objetivo = buscar_archivo(carpeta['subcarpeta_1'], nombre_archivo)
+        if len(objetivo) != 0:
+            return [carpeta["nombre_carpeta"]] + objetivo
 
-# usar si o si append al nombre.
-    # Recursión (Completar)
+    if carpeta['subcarpeta_2']:
+        objetivo = buscar_archivo(carpeta['subcarpeta_2'], nombre_archivo)
+        if len(objetivo) != 0:
+            return [carpeta["nombre_carpeta"]] + objetivo
+    return []

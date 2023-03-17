@@ -35,7 +35,6 @@ class TestMain(unittest.TestCase):
         self.assertIsInstance(path, list)
         self.assertListEqual(path, ['UC', 'semestre 1', 'IIC2026', 'd3.js'])
 
-    @unittest.skip("Función no implementada completamente")
     def test_buscar_archivo_2(self):
         path = buscar_archivo(self.carpeta, "notas.secretas.no.mostrar.txt")
         self.assertIsInstance(path, list)
